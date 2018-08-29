@@ -26,7 +26,7 @@
       // .re[ject|solve](<is>, success, value)
 
       // Check if the value is a promise and try to obtain its `then` method
-      if (value && (is(func, value) | is(obj, value))) {
+      if (rejected !== 0 && value && (is(func, value) | is(obj, value))) {
         try { then = value.then; }
         catch (reason) { rejected = 0; value = reason; }
       }
